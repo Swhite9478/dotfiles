@@ -11,8 +11,6 @@ return {
 			-- But it should only be used with resident mode,  it has not effect used with portable mode
 		})
 
-		vim.cmd(":lua require('quicknote').ShowNoteSigns()") -- Show the Note Signs by default
-
 		-- set keymaps
 		local keymap = vim.keymap -- for brevity
 		local requireString = "lua require('quicknote')"
