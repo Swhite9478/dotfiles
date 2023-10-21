@@ -1,3 +1,18 @@
+vim.opt.termguicolors = true
+local function my_on_attach(bufnr)
+	local api = require("nvim-tree.api")
+
+	local function opts(desc)
+		return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+	end
+	local keymap = vim.keymap
+	-- default mappings
+	api.config.mappings.default_on_attach(bufnr)
+	keymap.set("n", "A", api.tree.expand_all, opts("Expand All"))
+	keymap.set("n", "l", api.node.open.edit, opts("Edit file"))
+	keymap.set("n", "v", api.node.open.vertical, opts("Open file in vertical split"))
+end
+
 return {
 	"nvim-tree/nvim-tree.lua",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -14,6 +29,7 @@ return {
 
 		-- configure nvim-tree
 		nvimtree.setup({
+			on_attach = my_on_attach,
 			view = {
 				width = 35,
 				relativenumber = true,
