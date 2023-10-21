@@ -42,7 +42,7 @@ blinking = "On"
 shape = "Underline"
 
 [env]
-TERM = "alacritty"
+TERM = "xterm-256color"
 
 [font]
 size = 22.0
