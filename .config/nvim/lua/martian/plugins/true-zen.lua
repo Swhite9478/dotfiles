@@ -31,8 +31,8 @@ return {
 					},
 					quit_untoggles = true, -- type :q or :qa to quit Ataraxis mode
 					padding = { -- padding windows
-						left = 22,
-						right = 22,
+						left = 7,
+						right = 7,
 						top = 0,
 						bottom = 0,
 					},
@@ -48,7 +48,7 @@ return {
 					options = { -- options to be disabled when entering Minimalist mode
 						number = false,
 						relativenumber = false,
-						showtabline = 0,
+						showtabline = 1,
 						signcolumn = "no",
 						statusline = "",
 						cmdheight = 1,

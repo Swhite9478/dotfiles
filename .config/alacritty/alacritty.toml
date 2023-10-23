@@ -1,32 +1,55 @@
-# TokyoNight Alacritty Colors
+ # ~/.config/alacritty/alacritty.toml
+#
+# Utilizing a neat little trick here: when alacritty launches, it will
+# set the default shell to tmux - when tmux launches, its default shell
+# will be set to zsh.
+
+# I should never need more than a single terminal process since I am using
+# a multiplexor, so when alacritty launces tmux using the arguments documented
+# below, I will immediately pick up wherever I left off in my terminal. I should
+# point out this is achieved using tmux in combination with the tpm continuum plugin.
+
+
+[shell]
+program = "/usr/bin/tmux"
+args = ["new","-As0"] # comment this line to launch a new tmux session when launching alacritty
+
+# The -A flag makes new-session behave like attach-session if
+# session-name already exists; in this case, -D behaves like
+# -d to attach-session
+
+ # import = [ "~/.config/alacritty/themes/themes/rose-pine.toml" ]
+
+# Colors (Tokyo Night)
+# Source: https://github.com/zatchheems/tokyo-night-alacritty-theme
 [colors]
 
-  # Default colors
-  [colors.primary]
-  background = '0x1a1b26'
-  foreground = '0xc0caf5'
+# Default colors
+[colors.primary]
+  background = '0x0c002f'
+  foreground = '0xa9b1d6'
 
-  # Normal colors
-  [colors.normal]
-  black = '0x15161e'
-  red = '0xf7768e'
-  green = '0x9ece6a'
-  yellow = '0xe0af68'
-  blue = '0x7aa2f7'
-  magenta = '0xbb9af7'
-  cyan = '0x7dcfff'
-  white = '0xa9b1d6'
+# Normal colors
+[colors.normal]
+  black   = '0x32344a'
+  red     = '0xf7768e'
+  green   = '0x9ece6a'
+  yellow  = '0xe0af68'
+  blue    = '0x7aa2f7'
+  magenta = '0xad8ee6'
+  cyan    = '0x449dab'
+  white   = '0x787c99'
 
-  # Bright colors
-  [colors.bright]
-  black = '0x414868'
-  red = '0xf7768e'
-  green = '0x9ece6a'
-  yellow = '0xe0af68'
-  blue = '0x7aa2f7'
+# Bright colors
+[colors.bright]
+  black   = '0x444b6a'
+  red     = '0xff7a93'
+  green   = '0xb9f27c'
+  yellow  = '0xff9e64'
+  blue    = '0x7da6ff'
   magenta = '0xbb9af7'
-  cyan = '0x7dcfff'
-  white = '0xc0caf5'
+  cyan    = '0x0db9d7'
+  white   = '0xacb0d0'
 
 
 [colors.vi_mode_cursor]

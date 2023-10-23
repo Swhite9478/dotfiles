@@ -9,9 +9,7 @@ local function load_autocommands()
 	for _, filename in ipairs(files) do
 		-- load in the files
 		local success, module = pcall(require, "martian.autocommands." .. filename:match("^.*/(.+)%.lua$"))
-		if success then
-			vim.api.nvim_out_write("Loaded autocommands from " .. filename .. "\n")
-		else
+		if not success then
 			vim.api.nvim_err_write("Error loading autocommands from " .. filename .. ": " .. module .. "\n")
 		end
 	end
