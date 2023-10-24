@@ -119,7 +119,10 @@ export NVM_DIR="$HOME/.nvm"
 
 alias config='/usr/bin/git --git-dir=/home/azrik/.cfg/ --work-tree=/home/azrik'
 
-alias csync="config add $HOME/.zshrc ${CONFIG_DIR}/nvim/ ${CONFIG_DIR}/alacritty/ $HOME/.tmux.conf"
+alias csync="config add $HOME/.zshrc ${CONFIG_DIR}/nvim/ ${CONFIG_DIR}/alacritty/ $HOME/.tmux.conf $CONFIG_DIR/starship.toml"
 
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'
+
+# Keep this at the bottom of the .zshrc, we are using starship, baby!
+eval "$(starship init zsh)"
