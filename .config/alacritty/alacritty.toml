@@ -26,7 +26,7 @@ args = ["new","-As0"] # comment this line to launch a new tmux session when laun
 
 # Default colors
 [colors.primary]
-  background = '#011423'
+  background = '#011628'
   foreground = '#CBE0F0'
 
 # Normal colors
@@ -80,5 +80,5 @@ family = "Fira Code"
 style = "Italic"
 
 [window]
-opacity = 0.5
+opacity = 1
 title = "Ares Control Center"
