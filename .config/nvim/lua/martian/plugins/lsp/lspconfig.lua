@@ -137,6 +137,13 @@ return {
 			on_attach = on_attach,
 		})
 
+		-- configure terraform LSP
+		lspconfig["terraformls"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+			filetypes = { "terraform", "tf" },
+		})
+
 		-- configure lua server (with special settings)
 		lspconfig["lua_ls"].setup({
 			capabilities = capabilities,
