@@ -144,6 +144,13 @@ return {
 			filetypes = { "terraform", "tf" },
 		})
 
+		-- configure terraform LSP
+		lspconfig["rust_analyzer"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+			filetypes = { "rust", "rs" },
+		})
+
 		-- configure lua server (with special settings)
 		lspconfig["lua_ls"].setup({
 			capabilities = capabilities,
