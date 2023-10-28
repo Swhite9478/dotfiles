@@ -70,7 +70,7 @@ return {
 					--- `informative`: to get nice pre-baked folds
 					--- `invisible`: hide them
 					--- function() end: pass a custom func with your fold lines. See :h foldtext
-					folds_style = "invisible",
+					folds_style = "informative",
 					run_ataraxis = true, -- display narrowed text in a Ataraxis session
 					callbacks = { -- run functions when opening/closing Narrow mode
 						open_pre = nil,
