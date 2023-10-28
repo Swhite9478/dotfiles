@@ -17,12 +17,14 @@ return {
     ]])
 
 		local keymap = vim.keymap
+
 		keymap.set(
 			"n",
 			"<leader>db",
 			":call vimspector#ToggleBreakpoint()<cr>",
 			{ desc = "Vimspector toggle breakpoint - [D]ebug [b]reakpoint" }
 		)
+
 		keymap.set(
 			"n",
 			"<leader>dw",
