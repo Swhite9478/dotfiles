@@ -20,6 +20,28 @@ opt.smartcase = true -- if you include mixed cased in your search, assumes you w
 -- cursor line --
 opt.cursorline = true -- highlight the current cursor line
 
+------------- COMPLETION OPTIONS -------------
+
+-- Set completeopt to have a better completion experience
+-- :help completeopt
+-- menuone: popup even when there's only one match
+-- noinsert: Do not insert text until a selection is made
+-- noselect: Do not select, force to select one from the menu
+-- shortmess: avoid showing extra message when using completion
+-- updatetime: set updatetime for CursorHold
+opt.completeopt = { "menuone", "noselect", "noinsert" }
+opt.shortmess = opt.shortmess + { c = true }
+vim.api.nvim_set_option("updatetime", 300)
+
+-- Fixed column for diagnostics to appear
+-- Show autodiagnostic popup on cursor hover_range
+-- Goto prevous / next diagnostic warning / error
+-- Show inlay_hints more frequently
+vim.cmd([[
+set signcolumn=yes
+autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
+]])
+
 ------------- APPEARANCE -------------
 
 -- turn on termguicolors for nightfly colorscheme to work
