@@ -61,6 +61,7 @@ return {
 
 		-- used to enable autocompletion (assign to every lsp server config)
 		local capabilities = cmp_nvim_lsp.default_capabilities()
+		local inlay_hints = { enabled = true }
 
 		-- Change the Diagnostic symbols in the sign column (gutter)
 		-- (not in youtube nvim video)
@@ -74,24 +75,28 @@ return {
 		lspconfig["html"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			inlay_hints = inlay_hints,
 		})
 
 		-- configure typescript server with plugin
 		lspconfig["tsserver"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			inlay_hints = inlay_hints,
 		})
 
 		-- configure css server
 		lspconfig["cssls"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			inlay_hints = inlay_hints,
 		})
 
 		-- configure tailwindcss server
 		lspconfig["tailwindcss"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			inlay_hints = inlay_hints,
 		})
 
 		-- configure svelte server
@@ -109,12 +114,14 @@ return {
 					end,
 				})
 			end,
+			inlay_hints = inlay_hints,
 		})
 
 		-- configure prisma orm server
 		lspconfig["prismals"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			inlay_hints = inlay_hints,
 		})
 
 		-- configure graphql language server
@@ -122,6 +129,7 @@ return {
 			capabilities = capabilities,
 			on_attach = on_attach,
 			filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
+			inlay_hints = inlay_hints,
 		})
 
 		-- configure emmet language server
@@ -129,12 +137,14 @@ return {
 			capabilities = capabilities,
 			on_attach = on_attach,
 			filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+			inlay_hints = inlay_hints,
 		})
 
 		-- configure python server
 		lspconfig["pyright"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			inlay_hints = inlay_hints,
 		})
 
 		-- configure terraform LSP
@@ -142,6 +152,7 @@ return {
 			capabilities = capabilities,
 			on_attach = on_attach,
 			filetypes = { "terraform", "tf" },
+			inlay_hints = inlay_hints,
 		})
 
 		-- configure terraform LSP
@@ -149,12 +160,14 @@ return {
 			capabilities = capabilities,
 			on_attach = on_attach,
 			filetypes = { "rust", "rs" },
+			inlay_hints = inlay_hints,
 		})
 
 		-- configure lua server (with special settings)
 		lspconfig["lua_ls"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			inlay_hints = inlay_hints,
 			settings = { -- custom settings for lua
 				Lua = {
 					-- make the language server recognize "vim" global

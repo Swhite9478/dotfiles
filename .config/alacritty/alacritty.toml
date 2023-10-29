@@ -65,7 +65,7 @@ blinking = "On"
 shape = "Underline"
 
 [font]
-size = 20.0
+size = 16.0
 
 [font.normal]
 family = "Fira Code"

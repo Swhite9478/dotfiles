@@ -9,6 +9,11 @@ return {
     ]])
 
 		vim.cmd([[
+    let g:beacon_minimal_jump = 0
+    let g:beacon_size = 25
+    ]])
+
+		vim.cmd([[
     augroup MyCursorLineGroup
       autocmd!
       au WinEnter * setlocal cursorline
