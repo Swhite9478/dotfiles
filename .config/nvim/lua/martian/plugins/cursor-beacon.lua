@@ -10,7 +10,8 @@ return {
 
 		vim.cmd([[
     let g:beacon_minimal_jump = 0
-    let g:beacon_size = 25
+    let g:beacon_size = 30
+    let g:beacon_timeout = 750
     ]])
 
 		vim.cmd([[
